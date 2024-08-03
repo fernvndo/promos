@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Food Promotions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>July Promotions</h1>
+    </header>
+    <div class="brands-grid" id="brands-grid"></div>
+
+    <div class="section-header">
+        <h2>Ongoing Promotions</h2>
+    </div>
+    <div class="brands-grid" id="ongoing-brands-grid"></div>
+
+    <!-- Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <img id="promoImage" src="" alt="Promo Image">
+            <div class="form-row">
+                <label for="item-select">Select Item:</label>
+                <select id="item-select"></select>
+                <input type="number" id="quantity" min="1" placeholder="Quantity">
+            </div>
+            <button class="add-item-button" id="addItemButton">Add Item</button>
+            <div id="selected-items-container">
+                <h3>Selected Items</h3>
+                <table id="selected-items-table" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%; border: 1px solid #ccc; background-color: #f2f2f2;">Item Name</th>
+                            <th style="width: 15%; border: 1px solid #ccc; background-color: #f2f2f2;">Quantity</th>
+                            <th style="width: 15%; border: 1px solid #ccc; background-color: #f2f2f2;">Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="selected-items-list"></tbody>
+                </table>
+            </div>
+            <div id="total-cost"></div>
+            <div class="form-row">
+                <input type="text" id="storeName" placeholder="Store Name">
+            </div>
+            <div class="form-row">
+                <input type="text" id="contact" placeholder="Contact">
+            </div>
+            <button class="generate-pdf-button" id="generatePDFButton">Generate PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
